@@ -18,5 +18,14 @@ class Post extends CI_Controller {
             exit('追加できませんでした。');
         }
     }
+
+    public function delete() {
+        $result = $this->db->delete($data = $_POST['product']);
+        if($result) {
+            header('Location: '.base_url());
+        }else{
+            exit('削除できませんでした。');
+        }
+    }
 }
 ?>

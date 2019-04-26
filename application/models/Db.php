@@ -20,5 +20,10 @@ class Db extends CI_Model {
         $sql = "INSERT INTO `order_list` (`product`, `price`, `quantity`) VALUES ('".$data['product']."', '".$data['price']."', '".$data['quantity']."')";
         return $this->mysqli->query($sql);
     }
+
+    public function delete($data) {
+        $sql = "DELETE FROM `order_list` WHERE `product`='$data'";
+        return $this->mysqli->query($sql);
+    }
 }
 ?>
